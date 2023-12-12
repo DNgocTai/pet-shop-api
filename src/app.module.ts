@@ -5,7 +5,13 @@ import { CatsModule } from './cats/cats.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [CatsModule, MongooseModule.forRoot('mongodb://localhost/pet-shop')],
+  imports: [
+    CatsModule,
+    MongooseModule.forRoot(
+      'mongodb+srv://dainn:L8eNw048vitiSMMd@mymongodb.pnkd3kp.mongodb.net/',
+      { dbName: 'mongod' },
+    ),
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
